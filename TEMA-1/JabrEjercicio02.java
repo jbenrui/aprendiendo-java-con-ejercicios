@@ -7,8 +7,8 @@
 
 public class JabrEjercicio02 {
   public static void main (String[] agrs) {
-    System.out.println("Calle Bambera n1");
-    System.out.println("717707240");
+    System.out.println("Calle Frederik Terman nº3");
+    System.out.println("717707879");
   }
 }
 
