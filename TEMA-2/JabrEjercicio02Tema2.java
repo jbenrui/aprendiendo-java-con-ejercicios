@@ -13,7 +13,7 @@ public class JabrEjercicio02Tema2 {
 	
 	public static void main (String[] args) {
 		String nombre = "Jose Antonio Benitez Ruiz";
-    System.out.println(nombre);
+    System.out.println("mi nombre es" + nombre);
 	}
 }
 
