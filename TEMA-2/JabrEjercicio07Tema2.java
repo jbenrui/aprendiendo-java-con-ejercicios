@@ -10,8 +10,8 @@
 
 
 public class JabrEjercicio07Tema2 {
-	public static void main (String[] args) {
-		char inicialJ = 'J';
+  public static void main (String[] args) {
+    char inicialJ = 'J';
     String nombreCompleto = "Jose";
     System.out.println("la inicial de mi nombre es: " + inicialJ + " " + "Y el nombre completo es" + " " +nombreCompleto);
 	}
