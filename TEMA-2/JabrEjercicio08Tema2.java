@@ -11,7 +11,7 @@
 
 
 public class JabrEjercicio08Tema2 {
-	public static void main (String[] args) {
+  public static void main (String[] args) {
     char letraJ = 'J';
     char letraO = 'o';
     char letraS = 's';
