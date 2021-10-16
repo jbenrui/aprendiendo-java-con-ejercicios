@@ -11,9 +11,9 @@
 
 public class JabrEjercicio07Tema2 {
 	public static void main (String[] args) {
-		char inicial = 'J';
-    String nombreCompleto = "Jose Antonio Benitez Ruiz";
-    System.out.println("No, no es posible, seria posible con el printf");
+		char inicialJ = 'J';
+    String nombreCompleto = "Jose";
+    System.out.println("la inicial de mi nombre es: " + inicialJ + " " + "Y el nombre completo es" + " " +nombreCompleto);
 	}
 }
 
