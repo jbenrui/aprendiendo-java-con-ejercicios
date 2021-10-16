@@ -9,9 +9,8 @@
 
 
 public class JabrEjercicio05Tema2 {
-	
-	public static void main (String[] args) {
-		double valorConvertir = 831.90;
+  public static void main (String[] args) {
+    double valorConvertir = 831.90;
     double valorPeseta = 166.38;
     
     double resultado = (valorConvertir / valorPeseta);

@@ -10,9 +10,8 @@
 
 
 public class JabrEjercicio03Tema2 {
-	
-	public static void main (String[] args) {
-		String nombre = "Jose Antonio Benitez Ruiz";
+  public static void main (String[] args) {
+    String nombre = "Jose Antonio Benitez Ruiz";
     String direccion = "C/ Frederik Terman n3";
     String telefono = "717707879";
     System.out.printf("Mi nombre es %s, estudio en %s y mi telefono es %s \n" ,nombre ,direccion ,telefono);

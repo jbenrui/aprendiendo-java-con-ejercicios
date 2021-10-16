@@ -10,8 +10,8 @@
 
 
 public class JabrEjercicio06Tema2 {
-	public static void main (String[] args) {
-		double baseImponible = 1200;
+  public static void main (String[] args) {
+    double baseImponible = 1200;
     double iva = 0.21;
     
     double resultado = ( baseImponible * iva ) + baseImponible;
