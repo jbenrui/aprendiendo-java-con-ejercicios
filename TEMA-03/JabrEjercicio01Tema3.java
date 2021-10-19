@@ -12,12 +12,12 @@ public class JabrEjercicio01Tema3 {
   
   public static void main (String[] args) {
     System.out.println("Introduce un numero: ");
-    int x = Integer.parseInt(System.console().readLine() );
+    double x = Double.parseDouble(System.console().readLine());
     System.out.println("Introduce un numero: ");
-    int y = Integer.parseInt(System.console().readLine() );
+    double y = Double.parseDouble(System.console().readLine());
     
-    int multiplicacion = (x * y );
-    System.out.printf("La multiplicacion de %d * %d es %d \n " ,x ,y ,multiplicacion );
+    double multiplicacion = (x * y );
+    System.out.printf("La multiplicacion de %.2f * %.2f es %.2f \n " ,x ,y ,multiplicacion );
   }
 }
 
