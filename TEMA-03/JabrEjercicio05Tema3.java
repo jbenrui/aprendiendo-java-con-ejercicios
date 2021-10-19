@@ -13,7 +13,7 @@ public class JabrEjercicio05Tema3{
     double altura = Double.parseDouble(System.console().readLine() );
     
     double resultado = base * altura;
-    System.out.printf("El área de un rectángulo es : %.f cm" ,resultado );
+    System.out.printf("El área de un rectángulo es : %.f cm²" ,resultado );
     
   }
 }
