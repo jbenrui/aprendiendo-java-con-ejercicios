@@ -18,7 +18,7 @@ public class JabrEjercicio09Tema3{
     double altura = Double.parseDouble(System.console().readLine() );
     
     double volumen = (((double)1 / (double)3) * (Math.PI * radioCuadrado * altura));
-    System.out.printf("El volumen de un cono es : %f" ,volumen );
+    System.out.printf("El volumen de un cono es : %f cm³" ,volumen );
     
   }
 }
