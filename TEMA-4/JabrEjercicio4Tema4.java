@@ -18,7 +18,7 @@ public class JabrEjercicio4Tema4 {
       int salarioHora = 12;
       double resultado = (double)( horasSemanales * salarioHora ); 
       System.out.printf("El sueldo semanal que le corresponde es de %.2f € " ,horasSemanales ,resultado);
-    } else if (horasSemanales >=40) {
+    } else if (horasSemanales >=41) {
       int salarioHora = 16;
       double resultado = (double)( horasSemanales * salarioHora ); 
       System.out.printf("El sueldo semanal que le corresponde es de %.2f € " ,horasSemanales ,resultado);
