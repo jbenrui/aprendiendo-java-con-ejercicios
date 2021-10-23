@@ -13,15 +13,13 @@ public class JabrEjercicio4Tema4 {
   public static void main (String[] args) {
     System.out.print("Introduce el numero de horas semanales: ");
     int horasSemanales = Integer.parseInt(System.console().readLine());
-    
+    int salarioHora = 12;
     if ((horasSemanales >=0) && (horasSemanales <=40)){
-      int salarioHora = 12;
-      double resultado = (double)( horasSemanales * salarioHora ); 
-      System.out.printf("El sueldo semanal que le corresponde es de %.2f € " ,horasSemanales ,resultado);
+      int resultado = ( horasSemanales * salarioHora ); 
+      System.out.printf("El sueldo semanal que le corresponde es de %d € " ,resultado);
     } else if (horasSemanales >=41) {
-      int salarioHora = 16;
-      double resultado = (double)( horasSemanales * salarioHora ); 
-      System.out.printf("El sueldo semanal que le corresponde es de %.2f € " ,horasSemanales ,resultado);
+      int resultado = ( (40 * salarioHora)  + (horasSemanales - 40) * 16); 
+      System.out.printf("El sueldo semanal que le corresponde es de %d € "  ,resultado);
     } else {
       System.out.print("El numero de horas introducida no es valida");
     }
