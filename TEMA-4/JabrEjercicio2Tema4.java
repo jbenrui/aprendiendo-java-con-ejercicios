@@ -15,24 +15,19 @@ public class JabrEjercicio2Tema4 {
     //He supuesto que el programa controla en cierto modo la llegada del trabaja
     //-dor a la empresa y le da un saludo segun el tramo de hora.
      
-    System.out.print("Introduce el la hora de su llegada al trabajo: ");
+    System.out.print("Introduce la hora de su llegada al trabajo: ");
     int horaDeLlegada = Integer.parseInt(System.console().readLine() );;
     
     if ((horaDeLlegada >= 6) && (horaDeLlegada <= 12)) {
       System.out.println("Buenos Días");
-    }
-    
-    if ((horaDeLlegada >= 13) && (horaDeLlegada <= 20)) {
+    } else if ((horaDeLlegada >= 13) && (horaDeLlegada <= 20)) {
       System.out.println("Buenas Tardes");
-    }
-    
-    if (((horaDeLlegada >= 21 ) && (horaDeLlegada <= 23)) || ((horaDeLlegada >= 5 ) && (horaDeLlegada <= 0))){
+    } else if ((horaDeLlegada >= 21 ) && (horaDeLlegada <= 23)){
       System.out.println("Buenas Noches");
-      //No funciona bien este if
-    }
-    if ((horaDeLlegada >= 24 ) && (horaDeLlegada <= 0)) {
+    } else if ((horaDeLlegada >= 0 ) && (horaDeLlegada <= 5)){
+      System.out.println("Buenas Noches");
+    } else {
       System.out.println("Use la franja de horario correcta");
-      //no saca el mensaje de error
     }
   }
 }
