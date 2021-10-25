@@ -22,8 +22,10 @@ public class JabrEjercicio5Tema4 {
       int resultado = ( (int)(-b)/(int)a);
       System.out.printf("x = %d \n" ,resultado);
       
+    } else if ((a == 0) && (b == 0)){
+      System.out.print("Tiene infinita soluciones");
     } else {
-      System.out.print("Operacion no valida");
+      System.out.print("No tiene solución");
     }
   }
 }
