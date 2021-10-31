@@ -34,7 +34,9 @@ public class JabrEjercicio28Tema4 {
       System.out.print("Empate");
     } else if ((user1.equals("papel")) && (user2.equals("papel"))){
       System.out.print("Empate");
-    } 
+    } else {
+      System.out.print("Uno de los jugadores ha introducido una opcion incorrecta.");
+    }
   }
 }
 
