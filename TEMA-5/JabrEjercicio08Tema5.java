@@ -12,8 +12,8 @@ public class JabrEjercicio08Tema5 {
     System.out.print("Introduce un numero para sacar su tabla de multiplicar: ");
     int n = Integer.parseInt(System.console().readLine()) ;
     
-    for (int multiplo = 0; multiplo <= 10; multiplo ++){
-      System.out.printf("%2d x %2d = %2d\n",n,multiplo,(n*multiplo));
+    for (int multiplicador = 0; multiplicador <= 10; multiplicador ++){
+      System.out.printf("%2d x %2d = %2d\n",n,multiplicador,(n*multiplicador));
       
     }
   }
