@@ -25,4 +25,3 @@ public class JabrEjercicio13Tema5 {
     System.out.printf("Son positivos %d y Son negativos %d",numPos,numNeg);
   }
 }
-
