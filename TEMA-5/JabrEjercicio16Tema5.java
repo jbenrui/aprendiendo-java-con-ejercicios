@@ -10,7 +10,7 @@
  */
 public class JabrEjercicio16Tema5 {
   public static void main (String[] args) {
-    System.out.print("Introduce un número base por teclado: ");
+    System.out.print("Introduce un número por teclado: ");
     int n = Integer.parseInt(System.console().readLine()) ;
     for(int divisor = 2; divisor < n  ;divisor++){
       int divisible = n % divisor;
