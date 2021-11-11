@@ -15,33 +15,31 @@ public class JabrEjercicio20Tema5 {
     System.out.print("Introduce el caracter por teclado: ");
     String caracter = System.console().readLine();
     int base = 1;
-    int numEspacioFuera = altura -1;
-    int numEspacioDentro = 0;
+    int numespacio = altura -1;
     int longitudLinea = 1;
     while (base <=altura ){
       
-      for (int a = 1; a <= numEspacioFuera; a++){
+      for (int a = 1; a <= numespacio; a++){
         System.out.print(" ");
         
       }
-      System.out.print(caracter);
-      for (int a = 1; a <= numEspacioDentro; a++){
-        System.out.print(" ");
+      for (int a = 1; a <= longitudLinea; a++ ){
+        if (base == altura)
+          System.out.print(caracter);
+        else{
+          if ((a == 1) || (a == longitudLinea)){
+            System.out.print(caracter);
+          } else {
+            System.out.print(" ");
+          }
+        }
         
-      }
-      
-      if (altura > 1){
-        System.out.print(caracter);
       }
       System.out.println(" ");
     base++;
-    numEspacioFuera--;
-    numEspacioDentro+=2;
+    numespacio--;
     longitudLinea+=2;
     }
-    for (int a = 1; a <= altura*2; a++ ){
-        System.out.print(caracter);
-      }
   }
 }
 
