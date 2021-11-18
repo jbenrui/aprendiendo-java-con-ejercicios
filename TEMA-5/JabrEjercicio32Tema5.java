@@ -19,14 +19,16 @@ public class JabrEjercicio32Tema5 {
     int sumaPares = 0;
     int numCifra = 0;
     System.out.print("Dígitos pares: ");
+    /** Le doy la vuelta al numero para que coja las cifras de izq a derecha.**/
     numero = (numero * 10)+1;
     while (numero > 0){
       
       voltear = (voltear * 10) + (numero %10);
       numero /= 10;
     }
+    /**saco la cifra del numero**/
     while (voltear > 0){
-      numCifra = voltear %10; /*saco la cifra del numero*/
+      numCifra = voltear %10; 
       
       
       
@@ -35,7 +37,7 @@ public class JabrEjercicio32Tema5 {
         sumaPares=numCifra + sumaPares ;  
         System.out.print(numCifra+ " ");
       }
-      voltear /= 10; /*voy dividiendo el numero para que vaya reduciendo el numero*/
+      voltear /= 10; //voy dividiendo el numero para que vaya reduciendo el numero.
     }
     System.out.print(" \n");
     System.out.print("Suma de los dígitos pares: "+sumaPares+ " ");
