@@ -13,36 +13,22 @@ public class JabrEjercicio33Tema5 {
   public static void main (String[] args) {
     System.out.print("Introduce la altura de la U por teclado: ");
     int altura = Integer.parseInt(System.console().readLine()) ;
-    int base = 1;
-    int contador = 0;
-    int numespacio = altura -1;
-    while (base <=altura ){
+    /**Cuerpo de la U **/
+    for (int a = 1; a < altura; a++ ){
+      System.out.print("*");
+      for (int contador = 1; contador <= (altura - 2);contador++){
+        System.out.print(" ");
+      } 
       System.out.println("*");
-      
-      
-    
-      while (base == (altura-1)){
-        while ( contador < (altura/2)+1){
-          
-          System.out.print(" *");
-          
-          contador++;
-        }
-        
-      }
-    
-    base++;
-    
     }
-    base =1;
-    while (base <=altura ){
-        for (int a = 1; a <= numespacio; a++){
-          System.out.print(" ");
-        
-        }
-        System.out.print("*");
-        numespacio--;
-      base++;
+    /**Base de la U **/
+    System.out.print(" ");
+    for (int contador = 1; contador <= (altura - 2);contador++){
+      System.out.print("*");
+
     }
   }
 }
+
+
+
