@@ -15,6 +15,11 @@ public class JabrEjercicio35Tema5 {
     int altura =1;
     int espaciosDelante=0;
     int espaciosDentro= alturaIntroducida - 1;
+    if ((alturaIntroducida <= 3) || ((alturaIntroducida %2)== 0)){
+      System.out.print("La altura de la X debe ser un numero Impar mayor a 3.");
+    }
+    System.out.println("");
+    
     /** Parte superior de la X **/
     while (altura < alturaIntroducida /2 + 1){
       
