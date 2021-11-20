@@ -11,51 +11,61 @@
 public class JabrEjercicio35Tema5 {
   public static void main (String[] args) {
     System.out.print("Introduce la altura de la X por teclado: ");
-    int altura = Integer.parseInt(System.console().readLine()) ;
-    int base = 1;
-    int cabeza = altura -2;
-    int numespacioDentro = altura -2;
-    int numespacioFuera = 0;
-    int longitudLinea = 1;
-    while (base < altura/2 +1 ){
+    int alturaIntroducida = Integer.parseInt(System.console().readLine()) ;
+    int altura =1;
+    int espaciosDelante=0;
+    int espaciosDentro= alturaIntroducida - 1;
+    /** Parte superior de la X **/
+    while (altura < alturaIntroducida /2 + 1){
       
-      for (int a = 1; a <= numespacioFuera; a++){
-        System.out.print(" ");
-        
-      }
-      System.out.print("*");
-      for (int a = 1; a < numespacioDentro; a++){
+      for (int i=1; i <= espaciosDelante;i++ ){
         System.out.print(" ");
       }
       System.out.print("*");
-      System.out.println();
-      base++;
-      numespacioDentro-=2;
-      numespacioFuera++;
+      for (int i = 1; i < espaciosDentro; i++ ){
+        System.out.print(" ");
+      }
+      System.out.print("*");
+      System.out.println("");
+      
+      altura++;
+      espaciosDelante++;
+      espaciosDentro-=2;
+      
     }
-    /**Base de la X**/
-    numespacioDentro = 1;
-    numespacioFuera = altura / 2;
-    base = 1;
-
-    while (base <=(altura/2)+1 ){
-      
-      for (int a = 1; a <= numespacioFuera; a++){
+    /** Parte del centro de la X **/
+    if (altura == alturaIntroducida /2 +1){
+      for (int i = 1; i <= altura-1; i++){
         System.out.print(" ");
-        
       }
       System.out.print("*");
-      for (int a = 1; a < numespacioDentro; a++){
+    }
+    System.out.println("");
+    
+    /** Parte inferior de la X **/
+    
+    altura =1;
+    espaciosDelante=alturaIntroducida /2 -1;
+    espaciosDentro= 2;
+    
+    while (altura < alturaIntroducida /2 + 1){
+      
+      for (int i=1 ; i <= espaciosDelante;i++ ){
         System.out.print(" ");
       }
-      System.out.print(" ");
-      if (base > 1){
-        System.out.print("*");
+      System.out.print("*");
+      for (int i = 1; i < espaciosDentro; i++ ){
+        System.out.print(" ");
       }
-    System.out.println();
-    base++;
-    numespacioFuera--;
-    longitudLinea+=2;
+      System.out.print("*");
+      System.out.println("");
+      
+      
+      
+      altura++;
+      espaciosDelante--;
+      espaciosDentro+=2;
+      
     }
   }
 }
