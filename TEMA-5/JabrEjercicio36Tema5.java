@@ -14,9 +14,9 @@ public class JabrEjercicio36Tema5 {
   public static void main (String[] args) {
     System.out.println("El programa nos dira si un numero es capicua o no");
     System.out.print("Introduce un numero por teclado: ");
-    int numeroIntroducido = Integer.parseInt(System.console().readLine()) ;
-    int numero = numeroIntroducido;
-    int voltear = 0;
+    long numeroIntroducido = Integer.parseInt(System.console().readLine()) ;
+    long numero = numeroIntroducido;
+    long voltear = 0;
     /**Le doy la vuelta al numero**/
     while (numero > 0){
       
