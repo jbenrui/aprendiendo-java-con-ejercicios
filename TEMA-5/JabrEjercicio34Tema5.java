@@ -1,5 +1,5 @@
 /**
- * Ejercicio: 32
+ * Ejercicio: 34
  * Escribe un programa que pida dos números por teclado y que luego mezcle en 
  * dos números diferentes los dígitos pares y los impares. Se van comprobando
  * los dígitos de la siguiente manera: primer dígito del primer número,primer
@@ -17,54 +17,55 @@ public class JabrEjercicio34Tema5 {
   public static void main (String[] args) {
     System.out.println("El programa pide 2 y luego los mezcle en dos números diferentes los dígitos pares y los impares.");
     System.out.print("Introduce un numero entero positivo por teclado: ");
-    int numero1 = Integer.parseInt(System.console().readLine()) ;
+    long numero1 = Integer.parseInt(System.console().readLine()) ;
     System.out.print("Introduce otro numero entero positivo por teclado: ");
-    int numero2 = Integer.parseInt(System.console().readLine()) ;
-    int esPar = 0 ;
-    int esParNum2 = 0 ;
-    int esImpar = 0;
-    int esImparNum2 = 0;
-    int voltear = 0;
-    int voltearNum2 = 0;
-    int sumaPares = 0;
-    int numCifra = 0;
-    int numCifra2 = 0;
-    System.out.print("Dígitos pares: ");
-    /**saco la cifra de los numeros pares **/
+    long numero2 = Integer.parseInt(System.console().readLine()) ;
+    
+    long voltear = 0;
+    long voltearNum2 = 0;
+    int longitud = 0;
+    if ( numero1 == 0){
+      longitud=1;
+      }
+    
+    /**Volteo el primer numero**/
     while (numero1 > 0){
       
       voltear = (voltear * 10) + (numero1 %10);
       numero1 /= 10;
+      longitud++;
     }
-    while (voltear > 0){
-      numCifra = voltear %10; 
-      esPar = numCifra %2;
-      if ( esPar == 0){
-        System.out.print(numCifra+"");
-      }
-      if (esPar != 0){
-        esImpar= numCifra + (esImpar*10);
-        }
-      
-      voltear /= 10; //voy dividiendo el numero para que vaya reduciendo el numero.
-    }
+
+    /** Volteo el segundo numero**/
     while (numero2 > 0){
       voltearNum2 = (voltearNum2 * 10) + (numero2 %10);
       numero2 /= 10;
     }
-    while (voltearNum2 > 0){
-      numCifra2 = voltearNum2 %10; 
-      esParNum2 = numCifra2 %2;
-      if ( esParNum2 == 0){
-        System.out.print(numCifra2);
+    long numeroPares = 0;
+    long numeroImpares = 0;
+    int digito = 0;
+    /**recorro los numeros volteados para sacar ambos resultados**/
+    for (int a = 0; a < longitud; a++){
+      digito = (int)(voltear %10);
+      
+      if ((digito % 2)==0){
+        numeroPares = digito + (numeroPares * 10);
+      }else{
+        numeroImpares = digito + (numeroImpares * 10);
       }
-      if (esParNum2 != 0){
-        esImparNum2= numCifra2 + (esImparNum2*10);
-        
-        }
-      voltearNum2 /= 10; //voy dividiendo el numero para que vaya reduciendo el numero.
+      
+      digito = (int)(voltearNum2 %10);
+      
+      if ((digito % 2)== 0){
+        numeroPares = digito + (numeroPares * 10);
+      }else {
+        numeroImpares = digito + (numeroImpares * 10);
+      }
+      voltear = voltear /10;
+      voltearNum2 = voltearNum2 /10;
     }
-    System.out.println(" ");
-    System.out.print("Digitos Impares: "+ esImpar+""+ esImparNum2);
+    System.out.println("El número formado por los dígitos pares es: " + numeroPares);
+    System.out.println("El número formado por los dígitos impares es: " + numeroImpares);
+  
   }
 }
