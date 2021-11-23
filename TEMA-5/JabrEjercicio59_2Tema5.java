@@ -19,7 +19,7 @@ public class JabrEjercicio59_2Tema5 {
       if (i <= (altura -2) ){
         System.out.print(" ");
       } else if (i < altura ){
-        System.out.print("*");
+        System.out.print("\033[33m*");
       }
     }
     System.out.println("");
@@ -32,21 +32,21 @@ public class JabrEjercicio59_2Tema5 {
       }
       for (int a = 1; a <= longitudLinea; a++ ){
         if (base == (altura -3))
-          System.out.print("/");
+          System.out.print("\033[32m/");
         else{
           if ((a == 1) || (a == longitudLinea)){
-            System.out.print("/");
+            System.out.print("\033[32m/");
           } else {
             int caracter = (int)(Math.random()*15);
             switch (caracter){
               case 0:
-              System.out.print("+");
+              System.out.print("\033[36m+");
               break;
               case 1:
-              System.out.print("@");
+              System.out.print("\033[35m*");
               break;
               case 2:
-              System.out.print("o");
+              System.out.print("\033[31mo");
               break;
               default:
               System.out.print(" ");
@@ -71,7 +71,7 @@ public class JabrEjercicio59_2Tema5 {
         if (i < altura -1){
           System.out.print(" ");
         }else{
-          System.out.print("#");
+          System.out.print("\033[33m#");
           System.out.println("");
         }
       }
