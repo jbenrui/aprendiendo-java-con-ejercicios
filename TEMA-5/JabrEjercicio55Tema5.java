@@ -13,7 +13,6 @@ public class JabrEjercicio55Tema5 {
   public static void main (String[] args) {
     System.out.print("Introduzca un número entero : ");
     long numero = Integer.parseInt(System.console().readLine()) ;
-    int numerosComidos = 0;
     long resultado = 0;
     int digito = 0;
     int longitud= 0;
@@ -37,7 +36,7 @@ public class JabrEjercicio55Tema5 {
       
       voltear/=10;
     }
-    System.out.println("Después de haber sido comido por el gusano numérico se queda en "+cifraCambio+""+resultado);
+    System.out.println("El número resultado es "+cifraCambio+""+resultado);
     
   }
 }
