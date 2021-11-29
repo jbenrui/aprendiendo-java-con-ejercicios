@@ -11,7 +11,7 @@
  */
 public class JabrEjercicio11Tema6 {
   public static void main (String[] args) {
-    System.out.println("Realiza un programa que vaya generando números aleatorios pares entre 0 y 100 y que no termine de generar números hasta que no saque el 24");
+    System.out.println("Muestra 20 notas generadas al azar");
     System.out.println("");
     int numAleatorio=0;
     int contador = 0;
