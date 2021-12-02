@@ -1,5 +1,5 @@
 /**
- * Ejercicio: 5
+ * Ejercicio: 19
  * Muestra 50 números enteros aleatorios entre -100 y 200 (ambos incluidos)
  * separados por espacios. Muestra también el máximo, el mínimo y la media
  * de esos números.
