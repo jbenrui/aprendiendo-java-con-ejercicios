@@ -10,7 +10,7 @@
  */
 public class JabrEjercicio19Tema6 {
   public static void main (String[] args) {
-    System.out.println("El programa muestra 50 números enteros aleatorios entre 100 y 199 (ambos incluidos).");
+    System.out.println("El programa muestra 50 números enteros aleatorios entre -100 y 200 (ambos incluidos).");
     int contador = 50;
     int maximo = 0;
     int minimo = 199;
