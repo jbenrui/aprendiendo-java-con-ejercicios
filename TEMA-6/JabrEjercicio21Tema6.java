@@ -11,7 +11,7 @@
  */
 public class JabrEjercicio21Tema6 {
   public static void main (String[] args) {
-    System.out.println("Realiza un programa que genere una secuencia de cinco monedas de curso legal lanzadas al aire.");
+    System.out.println("El Programa que genera una secuencia de cinco monedas de curso legal lanzadas al aire.");
     System.out.println(" ");
     String moneda1="";
     String moneda2="";
