@@ -12,7 +12,7 @@
  */
 public class JabrEjercicio45Tema5 {
   public static void main (String[] args) {
-    System.out.println("Escribe un programa que permita partir un número introducido por teclado en dos partes");
+    System.out.println("Escribe un programa que cambie un dígito dentro de un número dando la posición y el valor nuevo.");
     System.out.print("Introduce un numero entero positivo por teclado: ");
     long numero1 = Integer.parseInt(System.console().readLine()) ;
     System.out.print("Introduce un numero entero positivo para partir el numero: ");
