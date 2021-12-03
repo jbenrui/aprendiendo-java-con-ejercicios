@@ -14,15 +14,21 @@ public class JabrEjercicio25Tema6 {
     System.out.println("El programa muestra 100 números enteros aleatorios entre 10 y 200 (ambos incluidos).");
     int contador = 100;
     int numAleatorio=0;
-    
-    for (int i = 2; i <= contador+2;i++){
-      numAleatorio=(int)(Math.random()*200) +10;
+    boolean esPrimo;
+    for (int i = 0; i <= contador ;i++){
+      numAleatorio=(int)(Math.random()*(200 -10 ))+10;
+      esPrimo = true;
       
-      if ((numAleatorio % 5) == 0){
-        System.out.print("["+numAleatorio+"] ");
-      } else if ((((numAleatorio % 1)== 0) && ((numAleatorio % numAleatorio)==0))&&((numAleatorio % 2)!= 0)){
+      for (int aux=2; aux < numAleatorio; aux++){
+        if ((numAleatorio % aux) == 0){
+          esPrimo = false;
+        }
+      }
+      if (!esPrimo){
         System.out.print("#"+numAleatorio+"# ");
-      }else {
+      }else if ((numAleatorio % 5) == 0){
+        System.out.print("["+numAleatorio+"] ");
+      } else {
         System.out.print(numAleatorio+" ");
       }
     }
