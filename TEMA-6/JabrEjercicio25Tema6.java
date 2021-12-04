@@ -15,8 +15,8 @@ public class JabrEjercicio25Tema6 {
     int contador = 100;
     int numAleatorio=0;
     boolean esPrimo;
-    for (int i = 0; i <= contador ;i++){
-      numAleatorio=(int)(Math.random()*(200 -10 ))+10;
+   do{
+      numAleatorio=(int)(Math.random()* 191)+10;
       esPrimo = true;
       
       for (int aux=2; aux < numAleatorio; aux++){
@@ -24,13 +24,14 @@ public class JabrEjercicio25Tema6 {
           esPrimo = false;
         }
       }
-      if (!esPrimo){
-        System.out.print("#"+numAleatorio+"# ");
-      }else if ((numAleatorio % 5) == 0){
+      if ((numAleatorio % 5) == 0) {
         System.out.print("["+numAleatorio+"] ");
+      }else if (esPrimo) {
+        System.out.print("#"+numAleatorio+"# ");
       } else {
         System.out.print(numAleatorio+" ");
       }
-    }
+      contador--;
+    }while (contador > 0);
   }
 }
