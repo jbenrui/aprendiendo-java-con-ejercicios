@@ -14,7 +14,7 @@
  */
 public class JabrEjercicio66Tema5 {
   public static void main (String[] args) {
-    System.out.print("Introduzca la altura de la A (un número mayor o igual a 3): ");
+    System.out.print("Por favor, introduzca la altura de la figura: ");
     int altura = Integer.parseInt(System.console().readLine()) ;
     if (((altura %2)==0)||(altura < 3)){
       System.out.print("La altura no es correcta, debe ser un número impar mayor o igual que 3.");
