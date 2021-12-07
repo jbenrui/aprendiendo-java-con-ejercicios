@@ -6,7 +6,7 @@
  * debe ser un número impar mayor o igual que 3.La distancia entre cada flecha de 
  * asteriscos es siempre de 4 espacios.Si la altura introducida por el usuario no
  * es un número impar mayor o igual que 3, el programa debe mostrar un mensaje de
- * error.
+ * error .
  * 
  * @author Jose Antonio Benitez Ruiz
  * 
