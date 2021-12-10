@@ -12,7 +12,7 @@ public class JabrEjercicio09Tema7 {
   public static void main (String[] args) {
     
     System.out.print("Introduce 8 numeros y el programa te muestra el los impares y pares:\n");
-    int [] numero = new int[10];
+    int [] numero = new int[8];
     for (int i = 0; i < 8;i++){
       System.out.printf("%2dº numero: ",(i+1));
       numero[i] = Integer.parseInt(System.console().readLine());
