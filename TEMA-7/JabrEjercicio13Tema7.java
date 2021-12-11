@@ -15,7 +15,6 @@ public class JabrEjercicio13Tema7 {
   public static void main (String[] args) {
     
     int [] numero = new int[100];
-    System.out.print("Introduce 10 numeros porfavor : \n");
     for (int i = 0; i < 100;i++){
       numero[i] = (int)(Math.random()*501);
     }
