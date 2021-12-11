@@ -55,6 +55,7 @@ public class JabrEjercicio13Tema7 {
           indice++;
         }
       break;
+      default:
     }
     
     
