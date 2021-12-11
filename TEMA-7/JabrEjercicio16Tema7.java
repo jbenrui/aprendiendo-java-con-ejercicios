@@ -15,7 +15,6 @@ public class JabrEjercicio16Tema7 {
   public static void main (String[] args) {
     
     int [] numero = new int[20];
-    System.out.print("Introduce 10 numeros porfavor : \n");
     for (int i = 0; i < 20;i++){
       numero[i] = (int)(Math.random()*401);
     }
