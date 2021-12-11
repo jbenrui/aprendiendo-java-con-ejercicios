@@ -13,52 +13,105 @@
  * 
  */
 public class JabrEjercicio14Tema7 {
-  public static void main (String[] args) {
-    
-     String[] palabra = new String[8];
-    String[] resultado = new String[8];
-    String[] color = {"verde", "rojo", "azul", "amarillo", "naranja", "rosa", "negro ", "blanco", "morado"};
-    int j = 0;
-    System.out.print("Introduce 8 palabras seguidas cada una de ENTER: \n");
-    for (int i = 0; i < palabra.length; i++) {
-      palabra[i] = System.console().readLine();
-      for (String c : color) {
-        if (palabra[i].equals(c)) {
-          resultado[i++] = c;
-        }
+   public static void main(String[] args) {
+    System.out.println("PROGRAMA QUE PIDE 8 PALABRAS Y LA ALMACENA EN UN ARRAY. LUEGO MOSTRARÁ PRIMERO LAS QUE SEA COLORES Y DESPUÉS EL RESTO");
+    System.out.println("----------------------------------------------------------------------------------------------------------------------");
+    System.out.println(" ");
+
+    String[] palabra = new String [8];
+
+    String[] colores = {"verde", "rojo", "azul", "amarillo", "naranja", "rosa", "negro", "blanco", "morado"};
+
+    int comprobadorColores = 0;
+    String[] coloresResultado = new String [8];
+    String[] restoResultado = new String [8];
+
+    int indice;
+    int indice2 = 0;
+    int indice3 = 0;
+    int contadorColores = 0;
+    int contadorResto = 0;
+
+    System.out.println("Introduzca 8 palabras:");
+
+    for (indice = 0; indice < 8; indice++) {
+      System.out.print("> ");
+      palabra[indice] = (System.console().readLine().toLowerCase());
+
+      boolean palabraEsColor = false;
+
+      // con este bucle for se comprueba si la palabra recién introducida coincide con algunos de los colores que tenemos en el array anterior.
+      for (comprobadorColores = 0; ((comprobadorColores < 9) && (!palabraEsColor)); comprobadorColores++) { 
+        // si es así, la palabra se guardará en un array aparte, palabraEsColor se hará verdadero y el bucle finalizará
+        if (palabra[indice].equals(colores[comprobadorColores])) {
+          palabraEsColor = true;
+          coloresResultado[indice2] = palabra[indice];
+          indice2++;
+          contadorColores++;
+        } 
       }
-    }
-    System.out.println("ARRAY ORIGINAL");
-    for (int i = 0; i < palabra.length; i++) {
-      System.out.printf("%-8d", i);
-    }
-    System.out.println();
-    for (int i = 0; i < palabra.length; i++) {
-      System.out.printf("%-8s", palabra[i]);
+
+      // si la palabra introducida no es ninguno de los colores del array, se guardará en otro array distinto
+      if (!palabraEsColor) {
+        restoResultado[indice3] = palabra[indice];
+        indice3++;
+        contadorResto++;
+      } 
     }
 
-    for (int i = 0; i < 8; i++) {
-      boolean esColor = false;
+    System.out.println(" ");
 
-      for (String c : color) {
-        if (palabra[i].equals(c)) {
-          esColor = true;
-        }
-      }
+    System.out.println("Array original:");
 
-      if (!esColor) {
-        resultado[j++] = palabra[i];
-      }
-    }
-    System.out.println();
-    System.out.println("ARRAY RESULTADO");
-    for (int i = 0; i < palabra.length; i++) {
-      System.out.printf("%-8d", i);
-    }
-    for (String r : resultado) {
-      System.out.printf("%-8s", r);
+    System.out.println("┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐");
+    System.out.print("|Índice |");
+
+    for (indice = 0; indice < 8; indice++) {
+      System.out.printf("   %d   %-1s" ,(indice) ,"|");
     }
 
+    System.out.println(" ");
+
+    System.out.println("├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤");
+    System.out.print("|Palabra|");
+
+    for (indice = 0; indice < 8; indice++) {
+      System.out.printf("%-7s%-1s" ,palabra[indice] ,"|");
+    }
+
+    System.out.println(" ");
+
+    System.out.println("└───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘");
+
+    System.out.println(" ");
+
+    System.out.println("Resultado:");
+
+    System.out.println("┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐");
+    System.out.print("|Índice |");
+
+    for (indice = 0; indice < 8; indice++) {
+      System.out.printf("   %d   %-1s" ,indice ,"|");
+    }
+
+    System.out.println(" ");
+
+    System.out.println("├───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┼───────┤");
+    System.out.print("|Palabra|");
+
+    //primero se imprime el array de las palabras que son colores
+    for (indice = 0; indice < contadorColores; indice++) {
+      System.out.printf("%-7s%-1s" ,coloresResultado[indice] ,"|");
+    }
+
+    //luego se imprime el array de las palabras que no son colores
+    for (indice = 0; indice < contadorResto; indice++) {
+      System.out.printf("%-7s%-1s" ,restoResultado[indice] ,"|");
+    }
+
+    System.out.println(" ");
+
+    System.out.println("└───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘");
   }
 }
 
