@@ -41,7 +41,7 @@ public class JabrEjercicio14Tema7 {
       boolean palabraEsColor = false;
 
       // con este bucle for se comprueba si la palabra recién introducida coincide con algunos de los colores que tenemos en el array anterior.
-      for (comprobadorColores = 0; ((comprobadorColores < 9) && (!palabraEsColor)); comprobadorColores++) { 
+      for (comprobadorColores = 0; comprobadorColores < 9; comprobadorColores++) { 
         // si es así, la palabra se guardará en un array aparte, palabraEsColor se hará verdadero y el bucle finalizará
         if (palabra[indice].equals(colores[comprobadorColores])) {
           palabraEsColor = true;

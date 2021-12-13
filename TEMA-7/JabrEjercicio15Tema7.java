@@ -27,9 +27,8 @@ public class JabrEjercicio15Tema7 {
     for (int i = 0; i < 10;i++){
       ocupacion[i] = (int)(Math.random()*5);
     }
-    boolean estaOcupada = true;
-    boolean sentado = true;
     int clientes = 1;
+    int mesaLibre = 0;
     while ( clientes > 0){
       /**Muestra el Indice**/
       System.out.println("\n┌─────────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐");
@@ -50,53 +49,48 @@ public class JabrEjercicio15Tema7 {
       System.out.println("│\n└─────────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘");
       System.out.println("");
       System.out.println("");
-      /**Recorro las mesas en busca de alguna vacia**/
-      numMesa=0;
-      estaOcupada = true;
-      while ( numMesa < 10){
-        if ( ocupacion[numMesa] == 0){
-          estaOcupada=false;
-        }
-        numMesa++;
-      }
-      System.out.print("¿Cuántos son? (Introduzca -1 para salir del programa): \n");
+      
+      
+      
+      System.out.print("¿Cuántos son? (Introduzca -1 para salir del programa): ");
       clientes = Integer.parseInt(System.console().readLine());
+      
+      //Si son mas de 4, No estan permitidos los grupos > 4.
       if (clientes > 4){
-        System.out.print("“Lo siento, no admitimos grupos de "+clientes+", haga grupos de 4 personas como máximo e intente de nuevo” \n");
-        
-      }else if ( clientes < 0){
-        System.out.print("Gracias,Hasta Pronto \n");
-      }else if (!estaOcupada){
-        numMesa=0;
-        sentado = true;
-        while ( sentado ){
-          if ( ocupacion[numMesa] == 0){
-            ocupacion[numMesa]=ocupacion[numMesa]+clientes;
-            System.out.print("Por favor, siéntense en la mesa número "+(numMesa +1)+"\n");
-            sentado=false;
+        System.out.println("Lo siento, no admitimos grupos de " + clientes + ", haga grupos de 4 personas como máximo e intente de nuevo.");
+      }else if (clientes == -1){
+        System.out.println("Gracias. Hasta pronto.");
+      }else {
+        boolean vacia = true;
+        int iVacia=0;
+        //Comprueba si hay una mesa libre donde el grupo de clientes se pueda sentar
+        for (mesaLibre=9; mesaLibre >= 0;mesaLibre--){
+          if (ocupacion[mesaLibre]==0){
+            vacia = false;
+            iVacia=mesaLibre;
           }
-          numMesa++;
         }
-      /**Si no hay mesas vacia**/
-      }else if (estaOcupada){
-        numMesa=0;
-        boolean hueco = false;
-        int numHueco=0; 
-        while (numMesa < 10){
-          if ( (clientes + ocupacion[numMesa]) <= 4 ){
-            hueco = true;
-            numHueco=numMesa+1;
+        boolean hayhueco = false;
+        int iHueco = 0;
+        for (int i = 9 ;i >= 0; i--){
+          if (clientes <= (4 - ocupacion[i])){
+            hayhueco = true;
+            iHueco=i;
           }
-          numMesa++;
         }
-        if (hueco){
-          ocupacion[numHueco]+=clientes;
-          System.out.print("Tendrán que compartir mesa. Por favor, siéntense en la mesa número "+numHueco+"\n");
-        }else{
+        if (!vacia){
+          //Si hay hueco para el grupo les dira.:
+          System.out.println("Por favor, siéntense en la mesa número " + (iVacia + 1));
+          ocupacion[iVacia]+=clientes;
+        }else if (hayhueco){
+          System.out.println("Por favor, siéntense en la mesa número " + (iHueco + 1));
+          ocupacion[iHueco]+=clientes;
+        }else {
+          //Si el comprabor no ha encontrado mesa donde haya un hueco para el grupo, dira:
           System.out.println("Lo siento, en estos momentos no queda sitio.");
         }
-      
       }
     }
   }
 }
+
