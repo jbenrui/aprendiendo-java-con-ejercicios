@@ -40,8 +40,35 @@ public class JabrEjercicio22Tema7 {
     System.out.println(" ");
     System.out.print("Valor  ");
     System.out.printf(" %3d|",numero[0]);
-    for (int indice = tamaño-1; indice > 0 ;indice--){
-      System.out.printf(" %3d|",numero[indice]);
+    int [] numerosHaciaDentro = new int[tamaño];
+    int [] numerosHaciaFuera = new int[tamaño];
+    int indice2=0;
+    int indice3=0;
+    for (int i = 0; i < tamaño; i++){
+      switch (i){
+        case 0:
+        break;
+        default:
+        //Los numeros que sean pares se mostraran de menor a mayor ("Hacia Dentro")
+          if ((numero[i]%2)==0){
+            numerosHaciaDentro[indice2]=numero[i];
+            indice2++;
+          }else{
+        //Y los que sean impares hacia fuera de mayor a menor 
+            numerosHaciaFuera[indice3]=numero[i];
+            indice3++;
+          }
+        break;
+      }
+    }
+    
+    /** Primero muestro los numeros pares de menor a mayor **/
+    for (int i = 0; i < indice2; i++){
+      System.out.printf(" %3d|",numerosHaciaDentro[i]);
+    }
+    /** Primero muestro los numeros pares de mayor a menor **/
+    for (int i = indice3 -1; i >= 0; i--){
+      System.out.printf(" %3d|",numerosHaciaFuera[i]);
     }
   }
 }
