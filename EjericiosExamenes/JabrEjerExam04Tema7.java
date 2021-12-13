@@ -52,13 +52,18 @@ public class JabrEjerExam04Tema7 {
       indiceValor = (int)(Math.random()*5);
       //Si el valor de la ficha de la suma es mayor a la del aumentador de las capturas entonces genero otro valor .
       while (repetir){
+        //Si las fichas es igual a las pizas y contadorFichas es Igual a RepetirFichas repetira el bucle hasta que para que salga otro indice.
         if ((fichas[indiceValor].equals(piezas))&&(contadorFichas[indiceValor] == repetirFicha[indiceValor])){
           contadorFichas[indiceValor]=contadorFichas[indiceValor]++;
           repetir=true;
+          indiceValor = (int)(Math.random()*5);
+        //Si no repite las fichas entonces hara:
         }else{
+          //Si el valor de la ficha mas las capturasDelJugador son mayores a las capturas totales saco otro indice.
           if ((valorFicha[indiceValor]+capturaJugador)> capturasTotales){
             indiceValor = (int)(Math.random()*5);
           }else {
+            //Si es menor lo sumo y muestro el resultado.
             capturaJugador+=valorFicha[indiceValor];
             System.out.println(fichas[indiceValor]+" ("+valorFicha[indiceValor]+" peones)");
             repetir=false;
