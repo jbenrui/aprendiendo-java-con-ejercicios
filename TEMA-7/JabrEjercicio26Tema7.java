@@ -21,7 +21,7 @@ public class JabrEjercicio26Tema7 {
       int sumTotal = 0; 
       for (fila = 0; fila < 4; fila++) {
         for (columna = 0; columna < 5; columna++) {
-          num[fila] [columna]= (int)(Math.random()*999)+100;
+          num[fila] [columna]= ((int)(Math.random() * 900) + 100);
           sumFila[fila] = sumFila[fila] + num[fila] [columna]; //mientras la fila en la que estemos introduciendo datos no cambie, la posición del array correspondiente irá aumentando
           sumColumna[columna] = sumColumna[columna] + num[fila] [columna]; //cada vez que se vuelva a una columna la posición del array correspondiente irá aumentando
           sumTotal = sumTotal + num[fila] [columna]; //la suma total irá incrementando cada vez que introducimos un dato
