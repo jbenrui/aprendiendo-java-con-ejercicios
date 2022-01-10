@@ -16,13 +16,9 @@ public class JabrEjercicio25Tema7 {
     int[] sumFila = new int[4];
     int[] sumColumna = new int[5]; 
     int sumTotal = 0; 
-    System.out.println("Introduzca 20 números:");
-
     for (fila = 0; fila < 4; fila++) {
       for (columna = 0; columna < 5; columna++) {
-        System.out.print("> ");
-        num[fila] [columna]= (int)(Math.random()*999)+100;
-        System.out.println(" ");
+        num[fila] [columna]= ((int)(Math.random() * 900) + 100);
 
         sumFila[fila] = sumFila[fila] + num[fila] [columna]; //mientras la fila en la que estemos introduciendo datos no cambie, la posición del array correspondiente irá aumentando
         sumColumna[columna] = sumColumna[columna] + num[fila] [columna]; //cada vez que se vuelva a una columna la posición del array correspondiente irá aumentando
