@@ -22,7 +22,7 @@ public class JabrEjerExam04Tema7 {
     System.out.println("PROGRAMA MUESTRAS LAS CAPTURAS DE FICHAS DE UN JUGADOR DURANTE UNA PARTIDA.");
     System.out.println("---------------------------------------------------------------------------");
     System.out.println(" ");
-    String[] piezas = {"Dama", "Torre", "Alfil", "Caballo", "naranja", "Peón",};
+    String[] piezas = {"Dama", "Torre", "Alfil", "Caballo", "Peón",};
     String[] fichas = new String [5];
     fichas[0] = "Dama";
     fichas[1] = "Torre";
@@ -39,7 +39,6 @@ public class JabrEjerExam04Tema7 {
     int capturasTotales = (int)(Math.random()*16);
     int capturaJugador = 0;
     int indiceValor = 0;
-    boolean repetir = true;
     int[] contadorFichas = new int [5];
     int[] repetirFicha = new int [5];
     repetirFicha[0]=1;
@@ -47,30 +46,28 @@ public class JabrEjerExam04Tema7 {
     repetirFicha[2]=2;
     repetirFicha[3]=2;
     repetirFicha[4]=8;
+    for (int i = 0; i < 5; i++){
+      contadorFichas[indiceValor]=0;
+    }
     //Mientras que las capturasTotales sean menor al aumentador de las capturas suma.
     while (capturaJugador < capturasTotales){
       indiceValor = (int)(Math.random()*5);
       //Si el valor de la ficha de la suma es mayor a la del aumentador de las capturas entonces genero otro valor .
-      while (repetir){
-        //Si las fichas es igual a las pizas y contadorFichas es Igual a RepetirFichas repetira el bucle hasta que para que salga otro indice.
-        if ((fichas[indiceValor].equals(piezas))&&(contadorFichas[indiceValor] == repetirFicha[indiceValor])){
-          contadorFichas[indiceValor]=contadorFichas[indiceValor]++;
-          repetir=true;
+      //Si las fichas es igual a las pizas y contadorFichas es Igual a RepetirFichas repetira el bucle hasta que para que salga otro indice.
+      if ((fichas[indiceValor].equals(piezas))&&(contadorFichas[indiceValor] < repetirFicha[indiceValor])){
+        contadorFichas[indiceValor]=contadorFichas[indiceValor]++;
+      //Si no repite las fichas entonces hara:
+      }else{
+        //Si el valor de la ficha mas las capturasDelJugador son mayores a las capturas totales saco otro indice.
+        if ((valorFicha[indiceValor]+capturaJugador)> capturasTotales){
           indiceValor = (int)(Math.random()*5);
-        //Si no repite las fichas entonces hara:
-        }else{
-          //Si el valor de la ficha mas las capturasDelJugador son mayores a las capturas totales saco otro indice.
-          if ((valorFicha[indiceValor]+capturaJugador)> capturasTotales){
-            indiceValor = (int)(Math.random()*5);
-          }else {
-            //Si es menor lo sumo y muestro el resultado.
-            capturaJugador+=valorFicha[indiceValor];
-            System.out.println(fichas[indiceValor]+" ("+valorFicha[indiceValor]+" peones)");
-            repetir=false;
-          }
+        }else {
+          //Si es menor lo sumo y muestro el resultado.
+          capturaJugador+=valorFicha[indiceValor];
+          System.out.println(fichas[indiceValor]+" ("+valorFicha[indiceValor]+" peones)");
         }
       }
-      repetir=true;
+      contadorFichas[indiceValor]=contadorFichas[indiceValor]++;
     }
     System.out.println("Puntos totales: "+capturasTotales+" peones.");
   }
