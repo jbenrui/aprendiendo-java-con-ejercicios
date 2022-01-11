@@ -9,44 +9,83 @@
  * 
  */
 public class JabrEjercicio28Tema7 {
-    public static void main (String[] args){
-        int[][] num = new int[6][10];
-        int[][] oldnum = new int[6][10];
-        int fila;
-        int columna;
-        int menor = 1001;
-        int mayor = 0;
-        int filaMayor=0;
-        int columnaMayor=0;
-        int filaMenor=0;
-        int columnaMenor=0;
-        
-        for (fila = 0; fila < 6; fila++) {
-            for (columna = 0; columna < 10; columna++) {
-                num[fila][columna] = (int)(Math.random() * 1001);
-                oldnum[fila][columna] = -1;
-                
-                if (num[fila][columna] < menor){
-                menor= num[fila][columna];
-                filaMenor=fila;
-                columnaMenor=columna;
-                }
-                
-                if (num[fila][columna] > mayor){
-                mayor= num[fila][columna];
-                filaMayor=fila;
-                columnaMayor=columna;
-                }
-                if (num[fila][columna] == oldnum[fila][columna] ){
-                    num[fila][columna] = (int)(Math.random() * 1001);
-                    oldnum[fila][columna] = num[fila][columna];
-                }
-                System.out.printf("%3d " ,num[fila][columna]);
+    public static void main(String[] args) 
+    throws InterruptedException {
+
+    int[][] num = new int[6][10];
+
+    int fila;
+    int columna;
+
+    // Genera el contenido del array sin que se repita ningún valor
+    boolean repetido;
+    int i;
+    int j;
+    
+    for(fila = 0; fila < 6; fila++) {
+    for(columna = 0; columna < 10; columna++) {
+        do {
+        num[fila][columna] = (int)(Math.random() * 1001);
+
+        // Comprueba si el número generado ya está en el array.
+        repetido = false;
+        for (i = 0; i < 10 * fila + columna; i++) {
+            if (num[fila][columna] == num[i / 10][i % 10]) {
+            repetido = true;
             }
-        System.out.println("");
         }
-        System.out.println("El mayor es el numero :"+ mayor + " y esta en la posicion : FILA : "+(filaMayor +1)+" COLUMNA :"+(columnaMayor +1));
-        System.out.println("El mayor es el numero :"+ menor + " y esta en la posicion : FILA : "+(filaMenor +1)+" COLUMNA :"+(columnaMenor +1));
-        
+        } while (repetido);
     }
+    }
+
+    int minimo = Integer.MAX_VALUE;
+    int filaMinimo = 0;
+    int columnaMinimo = 0;
+    
+    int maximo = Integer.MIN_VALUE;
+    int filaMaximo = 0;
+    int columnaMaximo = 0;
+
+    System.out.print("\n      ");
+    for(columna = 0; columna < 10; columna++) {
+    System.out.print("   " + columna + "  ");
+    }
+    System.out.println();
+    
+    System.out.print("    ┌");
+    for(columna = 0; columna < 10; columna++) {
+    System.out.print("──────");
+    }
+    System.out.println("┐");
+    
+    for(fila = 0; fila < 6; fila++) {
+    System.out.print("  " + fila + " │");
+    for(columna = 0; columna < 10; columna++) {
+        System.out.printf("%5d ", num[fila][columna]);
+        Thread.sleep(100);
+        
+        // Calcula el mínimo y guarda sus coordenadas
+        if (num[fila][columna] < minimo) {
+        minimo = num[fila][columna];
+        filaMinimo = fila;
+        columnaMinimo = columna;
+        }
+        
+        // Calcula el máximo y guarda sus coordenadas
+        if (num[fila][columna] > maximo) {
+        maximo = num[fila][columna];
+        filaMaximo = fila;
+        columnaMaximo = columna;
+        }
+    }
+    System.out.println("│");
+    }
+    System.out.print("    └");
+    for(columna = 0; columna < 10; columna++) {
+    System.out.print("──────");
+    }
+
+    System.out.println("┘\n\nEl máximo es " + maximo + " y está en la fila " + filaMaximo + ", columna " + columnaMaximo);
+    System.out.println("El mínimo es " + minimo + " y está en la fila " + filaMinimo + ", columna " + columnaMinimo);
+}
 }
