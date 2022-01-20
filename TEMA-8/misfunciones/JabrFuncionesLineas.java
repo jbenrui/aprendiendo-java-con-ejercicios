@@ -1,6 +1,4 @@
 package misfunciones;
-
-
 public class JabrFuncionesLineas {
     public static String linea(int longitud, char extremo, char relleno){
         System.out.print(extremo);
@@ -16,4 +14,3 @@ public class JabrFuncionesLineas {
         return linea(numespacios,' ',relleno);
     }
 }
-
