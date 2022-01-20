@@ -188,7 +188,7 @@ public class JabrFuncionesMatematicas {
         
         return resultado;
     }
-    public static int pasaBinario(int x) {
+    public static int convierteDecimal(int x) {
         int binario = x;
         int aux = 0;
         int digitos=JabrFuncionesMatematicas.digitos(binario); // Saco cuantos digitos totales tiene
@@ -200,5 +200,20 @@ public class JabrFuncionesMatematicas {
             aux = (int) (decimal + aux); //Voy sumando las potencias
         }
         return aux;
+    }
+    public static long convierteBinario(int x) {
+        int decimal = x;
+        String binario = "";
+        while (decimal > 0){ 
+            if (decimal % 2 == 0){
+                binario = "0" + binario;
+            }else{
+                binario = "1" + binario;
+            }
+            decimal = decimal / 2;
+        }
+        long resultado = Long.parseLong(binario);
+        return resultado;
+        
     }
 }
