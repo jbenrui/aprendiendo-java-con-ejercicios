@@ -38,24 +38,23 @@ public class JabrFuncionesMatematicas {
         while (!esPrimo(++numeroIntroducido)){};
         return numeroIntroducido;
     }
-    public static double potencia(double numeroIntroducido){
-        System.out.print("Introduce el exponente: ");
-        long exponente = Integer.parseInt(System.console().readLine()) ;
-        if (exponente == 0){
-            return  numeroIntroducido = 1;
-        }else if (numeroIntroducido == 0){
-            return  numeroIntroducido = 0;
+    public static double potencia(double x , double e){
+        double potencia = 0;
+        if (e == 0){
+            return  x = 1;
+        }else if (x == 0){
+            return  x = 0;
         }else{
-            return  numeroIntroducido = Math.pow(numeroIntroducido, exponente);
+            for(int i = 0;  i <= e ; i++){
+                potencia = x * i;
+            }
+            return potencia;
         }
     }
     public static int digitos(long numeroIntroducido){
         long numero = numeroIntroducido;
-        long voltear = 0;
         int contador = 0;
         while (numero > 0){
-        
-            voltear = (voltear * 10) + (numero %10);
             numero /= 10;
             contador++;
         }
@@ -71,67 +70,40 @@ public class JabrFuncionesMatematicas {
         }
         return voltear;
     }
-    public static int digitoN(long numeroIntroducido){
-        System.out.print("Introduce la posicion de un digito dentro del numero introducido: ");
-        int n = Integer.parseInt(System.console().readLine()) ;
-        long numero = numeroIntroducido;
-        long voltear = 0;
+    public static int digitoN(long x, int i){
+        int n = i;
+        long numero = x;
         long cifra = 1;
         int posicion = 0;
-        numero = (numero * 10) +1;
-        while (numero > 0){
-            voltear = (voltear * 10) + (numero %10);
-            numero /= 10;
-        }
+        long voltear = JabrFuncionesMatematicas.voltea(numero);
         while ( voltear > 0){
-        /*si la cifra es igual al digito entonces mostrara el siguiente mensaje por pantalla*/
-            
             if (posicion == n){
                 return (int) cifra;
-            
             }
-            /*saco la cifra con el modulo*/
-            
             cifra = (voltear % 10);
-            
-            voltear = voltear / 10;  /*divido el numero entre 10 para ir reduciendo el numero*/
-            
-            posicion++;/*por cada vuelta aumento la posicion hasta llegar al digito deseado*/
+            voltear = voltear / 10;
+            posicion++;
         
         }
         return -1;
         
     }
 
-    public static int posicionDeDigito(long numeroIntroducido){
-        System.out.print("Introduce un digito por teclado: ");
-        int n = Integer.parseInt(System.console().readLine()) ;
-        long numero = numeroIntroducido;
+    public static int posicionDeDigito(long x , int p){
+        int n = p;
+        long numero = x;
         long cifra = 1;
         int posicion = 0;
-        long voltear = 0;
-        numero = (numero * 10) +1;
-        while (numero > 0){
-            
-            voltear = (voltear * 10) + (numero %10);
-            numero /= 10;
-        }
+        long voltear = JabrFuncionesMatematicas.voltea(numero);
         while ( voltear > 0){
-            /*si la cifra es igual al digito entonces mostrara el siguiente mensaje por pantalla*/
-            
             if (posicion > 0){
                 if (cifra == n){
                     return posicion;
                 }
             }
-            /*saco la cifra con el modulo*/
-            
             cifra = voltear % 10;
-            
-            voltear = voltear / 10;  /*divido el numero entre 10 para ir reduciendo el numero*/
-            
-            posicion++;/*por cada vuelta aumento la posicion hasta llegar al digito deseado*/
-            
+            voltear = voltear / 10;
+            posicion++;
         }
         return -1;
     }
@@ -226,5 +198,18 @@ public class JabrFuncionesMatematicas {
         int resultado = (n1*multiplicaPorCifra)+n2;
         
         return resultado;
+    }
+    public static int pasaBinario(int x) {
+        int binario = x;
+        int aux = 0;
+        int digitos=JabrFuncionesMatematicas.digitos(binario); // Saco cuantos digitos totales tiene
+        for (int i = digitos -1; i >= 0; i-- ){ //Hago un bucle para que los digitos totales puedan ir desde la posicion max hasta el 0.
+            int cifra = binario % 10; // Saco las cifras
+            binario = binario / 10; //  Reduzco el numero binario
+            double decimal = JabrFuncionesMatematicas.potencia(2,i); //Hago una potencia de base 2 con el exponente el cual sera la posicion de los digitios
+            decimal = (cifra * decimal); // Multiplico la cifra por la potencia
+            aux = (int) (decimal + aux); //Voy sumando las potencias
+        }
+        return aux;
     }
 }
