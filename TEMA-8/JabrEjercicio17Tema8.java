@@ -4,6 +4,6 @@ public class JabrEjercicio17Tema8 {
         System.out.print("Introduce un numero comprendido por 1 y 0 por teclado: ");
         int binario = Integer.parseInt(System.console().readLine()) ;
         System.out.println(" ");
-        System.out.println("El numero pasado a decimal es : " + JabrFuncionesMatematicas.pasaBinario(binario));
+        System.out.println("El numero pasado a decimal es : " + JabrFuncionesMatematicas.convierteDecimal(binario));
     }
 }
