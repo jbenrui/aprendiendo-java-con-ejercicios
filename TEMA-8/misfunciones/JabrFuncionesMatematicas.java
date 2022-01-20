@@ -107,39 +107,29 @@ public class JabrFuncionesMatematicas {
         }
         return -1;
     }
-    public static long quitaPorDetras(long numeroIntroducido) {
-        System.out.print("Introduce cuantos digitios quieres quitar por detras : ");
-        long numero = numeroIntroducido;
-        int n = Integer.parseInt(System.console().readLine()) ;
+    public static long quitaPorDetras(long x, int j) {
+        long numero = x;
+        int n = j;
         while ( n > 0){
             numero = numero / 10;
             n--;
         }
         return numero;
     }
-    public static long quitaPorDelante(long numeroIntroducido) {
-        long numero = numeroIntroducido;
-        System.out.print("Introduce cuantos digitios quieres quitar por delante : ");
-        int n = Integer.parseInt(System.console().readLine()) ;
-        long voltear = 0;
-        while (numero > 0){
-            voltear = (voltear * 10) + (numero %10);
-            numero /= 10;
-        }
+    public static long quitaPorDelante(long x, int j) {
+        long numero = x;
+        int n = j;
+        long voltear = JabrFuncionesMatematicas.voltea(numero);
         while ( n > 0){
             voltear = voltear / 10;
             n--;
         }
-        while (voltear > 0){
-            numero = (numero * 10) + (voltear %10);
-            voltear /= 10;
-        }
-        return numero;
+        voltear = JabrFuncionesMatematicas.voltea(voltear);
+        return voltear;
     }
-    public static long pegaPorDetras(long numeroIntroducido) {
-        long numero = numeroIntroducido;
-        System.out.print("Introduce el numero que quieres añadir por detras : ");
-        long n = Integer.parseInt(System.console().readLine()) ;
+    public static long pegaPorDetras(long x , long j) {
+        long numero = x;
+        long n = j;
         long aux = n;
         int contador = 0;
         while (aux > 0){
@@ -153,10 +143,9 @@ public class JabrFuncionesMatematicas {
         numero = numero + n;
         return numero;
     }
-    public static long pegaPorDelante(long x) {
+    public static long pegaPorDelante(long x ,long j) {
         long numero = x;
-        System.out.print("Introduce el numero que quieres añadir por delante : ");
-        long n = Integer.parseInt(System.console().readLine()) ;
+        long n = j;
         long aux = numero;
         int contador = 0;
         while (aux > 0){
