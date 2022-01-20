@@ -1,4 +1,3 @@
-
 import misfunciones.JabrFuncionesMatematicas;
 public class JabrEjercicio15Tema8 {
     public static void main (String[] args) {
