@@ -216,4 +216,31 @@ public class JabrFuncionesMatematicas {
         return resultado;
         
     }
+    public static String convierteHexadecimal(int x) {
+        int decimal = x;
+        String hexadecimal = "";
+        String caracteresHexadecimales = "0123456789abcdef";
+
+        while (decimal > 0){
+            int residuo = decimal % 16; //Hago el modulo de 16 ya que los hexadecimales tienen 16 caracteres.
+            hexadecimal = caracteresHexadecimales.charAt(residuo) + hexadecimal;
+            decimal /= 16;
+        }
+        return hexadecimal;
+        
+    }
+    public static String convierteOctal(int x) {
+        int decimal = x;
+        String octal = "";
+        String caracteresOctal = "01234567";
+
+        while (decimal > 0){
+            int residuo = decimal % 8; //Hago el modulo de 16 ya que los hexadecimales tienen 16 caracteres.
+            octal = caracteresOctal.charAt(residuo) + octal;
+            decimal /= 8;
+        }
+        return octal;
+        
+    }
+    
 }
