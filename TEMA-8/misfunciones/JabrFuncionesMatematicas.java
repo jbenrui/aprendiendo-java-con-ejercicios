@@ -38,18 +38,12 @@ public class JabrFuncionesMatematicas {
         while (!esPrimo(++numeroIntroducido)){};
         return numeroIntroducido;
     }
-    public static double potencia(double x , double e){
-        double potencia = 0;
-        if (e == 0){
-            return  x = 1;
-        }else if (x == 0){
-            return  x = 0;
-        }else{
-            for(int i = 0;  i <= e ; i++){
-                potencia = x * i;
-            }
-            return potencia;
+    public static int potencia(int x , int e){
+        int resultado = 1;
+        for (int numVecesMultiplica = 0; numVecesMultiplica < e; numVecesMultiplica++) {
+            resultado = (x * resultado);
         }
+        return resultado;
     }
     public static int digitos(long numeroIntroducido){
         long numero = numeroIntroducido;
@@ -73,19 +67,15 @@ public class JabrFuncionesMatematicas {
     public static int digitoN(long x, int i){
         int n = i;
         long numero = x;
-        long cifra = 1;
-        int posicion = 0;
+        long cifra = 0;
         long voltear = JabrFuncionesMatematicas.voltea(numero);
-        while ( voltear > 0){
-            if (posicion == n){
-                return (int) cifra;
-            }
-            cifra = (voltear % 10);
+        cifra = (voltear % 10);
+        for (int comprobarPosicion = 0; comprobarPosicion < n; comprobarPosicion++){
             voltear = voltear / 10;
-            posicion++;
-        
+
+            cifra = (voltear % 10);
         }
-        return -1;
+        return (int) cifra;
         
     }
 
@@ -188,59 +178,6 @@ public class JabrFuncionesMatematicas {
         
         return resultado;
     }
-    public static int convierteDecimal(int x) {
-        int binario = x;
-        int aux = 0;
-        int digitos=JabrFuncionesMatematicas.digitos(binario); // Saco cuantos digitos totales tiene
-        for (int i = digitos -1; i >= 0; i-- ){ //Hago un bucle para que los digitos totales puedan ir desde la posicion max hasta el 0.
-            int cifra = binario % 10; // Saco las cifras
-            binario = binario / 10; //  Reduzco el numero binario
-            double decimal = JabrFuncionesMatematicas.potencia(2,i); //Hago una potencia de base 2 con el exponente el cual sera la posicion de los digitios
-            decimal = (cifra * decimal); // Multiplico la cifra por la potencia
-            aux = (int) (decimal + aux); //Voy sumando las potencias
-        }
-        return aux;
-    }
-    public static long convierteBinario(int x) {
-        int decimal = x;
-        String binario = "";
-        while (decimal > 0){ 
-            if (decimal % 2 == 0){
-                binario = "0" + binario;
-            }else{
-                binario = "1" + binario;
-            }
-            decimal = decimal / 2;
-        }
-        long resultado = Long.parseLong(binario);
-        return resultado;
-        
-    }
-    public static String convierteHexadecimal(int x) {
-        int decimal = x;
-        String hexadecimal = "";
-        String caracteresHexadecimales = "0123456789abcdef";
-
-        while (decimal > 0){
-            int residuo = decimal % 16; //Hago el modulo de 16 ya que los hexadecimales tienen 16 caracteres.
-            hexadecimal = caracteresHexadecimales.charAt(residuo) + hexadecimal;
-            decimal /= 16;
-        }
-        return hexadecimal;
-        
-    }
-    public static String convierteOctal(int x) {
-        int decimal = x;
-        String octal = "";
-        String caracteresOctal = "01234567";
-
-        while (decimal > 0){
-            int residuo = decimal % 8; //Hago el modulo de 16 ya que los hexadecimales tienen 16 caracteres.
-            octal = caracteresOctal.charAt(residuo) + octal;
-            decimal /= 8;
-        }
-        return octal;
-        
-    }
+    
     
 }
