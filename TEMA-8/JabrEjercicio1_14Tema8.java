@@ -18,7 +18,7 @@ public class JabrEjercicio1_14Tema8 {
         }
         System.out.println("Introduce un exponente:  ");
         int n = Integer.parseInt(System.console().readLine()) ;
-        System.out.println("El resultado de la potencia es "+JabrFuncionesMatematicas.potencia(numeroIntroducido, n));
+        System.out.println("El resultado de la potencia es "+JabrFuncionesMatematicas.potencia((int) numeroIntroducido, n));
         System.out.println("-------------------------------------------------------------");
         System.out.println("En el numero introducido hay "+JabrFuncionesMatematicas.digitos(numeroIntroducido)+" digitos");
         System.out.println("-------------------------------------------------------------");
