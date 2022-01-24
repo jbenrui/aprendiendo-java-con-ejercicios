@@ -86,6 +86,15 @@ public class JabrEjercicio19Tema8 {
                     System.out.println(vacio+"");
                     System.out.println("");
                 break;
+                case 9:
+                    System.out.print("Introduce un numero en octal entero positivo:  ");
+                    octal = Integer.parseInt(System.console().readLine()) ;
+                    System.out.println(" ");
+                    System.out.println("El numero Octal en Hexadecimal es : " + JabrFuncionesConversiones.convierteHexadecimal(JabrFuncionesConversiones.convierteDecimal(JabrFuncionesConversiones.deOctalABinario(octal))));
+                    vacio = System.console().readLine();
+                    System.out.println(vacio+"");
+                    System.out.println("");
+                break;
                 case 10:
                     System.out.print("Introduce un numero en hexadecimal:  ");
                     String hexadecimal = System.console().readLine();
