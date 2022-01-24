@@ -10,5 +10,10 @@ public class JabrEjercicio20Tema8 {
 
         int []array = JabrFuncionesArrays.generaArrayInt(tamaño, maximo, minimo);
         JabrFuncionesArrays.muestraArray(array);
+
+
+
+
+        
     }
 }
