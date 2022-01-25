@@ -78,4 +78,21 @@ public class JabrFuncionesArrays {
         }
         return arrayVolteado;
     }
+    public static int[] rotaDerechaArrayInt(int array[], int numPosicion){
+        int [] arrayRotado = new int [array.length];
+        for (int i= 0; i < arrayRotado.length; i++){
+            if (i < numPosicion){
+                arrayRotado[i] = array[(array.length -numPosicion) +i]; //(en un array de 10)Si el indice es menor a la posicion, guardo la posicion de los numeros , para ello resto la longitud del array - las posiciones y sumo el indice. 
+            }else {
+                arrayRotado[i] = array[i -numPosicion];//Esto es para que el rango se reduzca y asi solo coger los indicados.
+            }
+            
+            
+        }
+        return arrayRotado;
+    }
+    public static int[] rotaIzquierdaArrayInt(int array[], int numPosiciones){
+        int numPosicion = array.length - numPosiciones;
+        return JabrFuncionesArrays.rotaDerechaArrayInt(array, numPosicion);
+    }
 }
