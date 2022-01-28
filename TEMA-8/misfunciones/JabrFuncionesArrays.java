@@ -12,7 +12,7 @@ public class JabrFuncionesArrays {
     }
     public static void muestraArray(int array[]){
         for (int i = 0 ; i < array.length ; i++){
-            System.out.println("Array nº " + i + ": " + array[i]+" ");
+            System.out.print(array[i]+" ");
         }
     }
     public static int minimoArrayInt(int array[]){
@@ -94,5 +94,90 @@ public class JabrFuncionesArrays {
     public static int[] rotaIzquierdaArrayInt(int array[], int numPosiciones){
         int numPosicion = array.length - numPosiciones;
         return JabrFuncionesArrays.rotaDerechaArrayInt(array, numPosicion);
+    }
+    //A partir de aqui genero arrays bidimensionales
+    public static int[][] generaArrayBiInt(int sizeX, int sizeY, int maximo , int minimo){
+
+        int[][] array = new int[sizeX][sizeY];
+
+        for (int i = 0 ; i < sizeX ; i++){
+            for (int j = 0; j < sizeY; j++){
+                array[i][j] = (int)(Math.random()*(maximo - minimo))+minimo; //Si restas maximo con el minimo reduces el intervalo.
+            }
+            
+        }
+        return array;
+    }
+    public static int filasArrayIntBi(int x[][]) {
+        return x.length;
+    }
+    public static int columnasArrayIntBi(int x[][]) {
+        return x[0].length;
+    }
+
+    public static void muestraArrayBiInt(int arrayBi[][]){
+        for (int i = 0 ; i < JabrFuncionesArrays.filasArrayIntBi(arrayBi) ; i++){
+            for (int j = 0; j < JabrFuncionesArrays.columnasArrayIntBi(arrayBi); j++){
+                System.out.print(arrayBi[i][j]+" "); //Si restas maximo con el minimo reduces el intervalo.
+            }
+            System.out.println("");
+        }
+    }
+    public static void filaDeArrayBiInt(int arrayBi[][],int fila){
+            for (int j = 0; j < JabrFuncionesArrays.columnasArrayIntBi(arrayBi); j++){
+                System.out.print(arrayBi[fila][j]+" ");
+            }
+            System.out.println("");
+    }
+    public static void columnaDeArrayBiInt(int arrayBi[][],int columna){
+        for (int j = 0; j < JabrFuncionesArrays.filasArrayIntBi(arrayBi); j++){
+            System.out.println(arrayBi[j][columna]+" ");
+        }
+        System.out.println("");
+    }
+    public static int[] coordenadasEnArrayBiInt(int arrayBi[][],int numeroEnArray){
+        int contador = 0;
+        for (int i = 0 ; i < JabrFuncionesArrays.filasArrayIntBi(arrayBi) ; i++){
+            for (int j = 0; j < JabrFuncionesArrays.columnasArrayIntBi(arrayBi); j++){
+                if (numeroEnArray == arrayBi[i][j]){
+                    contador++;
+                    if (contador == 1){
+                        int [] cordenadas = { i , j};
+                        return cordenadas;
+                    }
+                }
+            }
+            System.out.println("");
+        }
+        int[] cordenadas = { -1 , -1};
+        return cordenadas;
+    }
+    public static void esPuntoDeSilla(int arrayBi[][]){
+        int[] array = new int[arrayBi.length];
+        for (int indice= 0; indice < JabrFuncionesArrays.columnasArrayIntBi(arrayBi); indice++){
+            for (int jindice = 0; jindice < JabrFuncionesArrays.columnasArrayIntBi(arrayBi); jindice++){
+                array[indice]=arrayBi[indice][jindice];
+            }
+        }
+        int minimoEnfila = -1;
+        for (int i = 0 ; i < array.length ; i++){
+            minimoEnfila = JabrFuncionesArrays.minimoArrayInt(array);
+        }
+        int tamaño = columnasArrayIntBi(arrayBi);
+        int[] arraycolumna = new int[tamaño];
+        for (int t= 0; t < JabrFuncionesArrays.columnasArrayIntBi(arrayBi); t++){
+            for (int v = 0; v < JabrFuncionesArrays.columnasArrayIntBi(arrayBi); v++){
+                arraycolumna[v]=arrayBi[v][t];
+            }
+        }
+        int maximoEnColumna = -1;
+        for (int j = 0; j < arraycolumna.length; j++){
+            maximoEnColumna = JabrFuncionesArrays.maximoArrayInt(arraycolumna);
+        }
+        if(minimoEnfila == maximoEnColumna){
+            System.out.println("Es PUNTO DE SILLA !!!");
+        }else{
+            System.out.println("no hay punto de silla");
+        }
     }
 }
