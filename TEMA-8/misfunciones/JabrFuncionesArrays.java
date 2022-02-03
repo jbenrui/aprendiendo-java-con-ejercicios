@@ -180,4 +180,38 @@ public class JabrFuncionesArrays {
             System.out.println("no hay punto de silla");
         }
     }
+    public static int[] diagonal(int arrayBi[][], int fila, int columna, String direccion){
+        int[] diagonalAux = new int[arrayBi.length];
+        int aux = 0;
+        //diagonal de derecha superior
+        switch (direccion) {
+            case "nose":
+                for (int i = 0; i < arrayBi[0].length; i++) {
+                    for (int j = 0; j < arrayBi.length; j++) {
+                        if (i - fila == j - columna) {
+                            diagonalAux[aux] = arrayBi[i][j];
+                            aux++;
+                        }
+                    } //for (int j = 0; j < array.length; j++)
+              } //for (int i = 0; i < array[0].length; i++)
+            break;
+            case "neso":
+                for (int i = 0; i < arrayBi[0].length; i++) {
+                    for (int j = 0; j < arrayBi.length ; j++) {
+                        if (i + j == fila + columna) {
+                            diagonalAux[aux] = arrayBi[i][j];
+                            aux++;
+                        }
+                    } //for (int j = 0; j < array.length; j++)
+              } //for (int i = 0; i < array[0].length; i++)
+            break;
+            default:
+        }
+        int [] diagonal = new int[aux];
+
+        for (int i = 0; i < aux; i++){
+            diagonal[i] = diagonalAux[i];
+        }
+        return diagonal;
+    }
 }
