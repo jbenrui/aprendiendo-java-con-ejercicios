@@ -18,14 +18,14 @@ public class JabrEjercicio50Tema8 {
         int posicion = 0;
         int indicea= 0;
         int indiceb= 0;
-        while (posicion <= r.length){
-            r[posicion] = a[indicea];
-            
-            r[posicion] = b[indiceb];
-            indicea++;
-            indiceb++;
-            posicion++;
-        }
+        do{
+            if (indicea < a.length){
+                r[posicion++] = a[indicea++];
+            }
+            if (indiceb < b.length){
+                r[posicion++] = b[indiceb++];
+            }
+        }while (posicion < (a.length + b.length));
         return r;
     }
 }
