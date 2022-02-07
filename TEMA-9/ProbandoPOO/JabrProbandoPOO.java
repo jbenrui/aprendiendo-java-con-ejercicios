@@ -9,7 +9,7 @@ public class JabrProbandoPOO {
         System.out.println("============");
 
         //Alumno alumno1 = new Alumno();
-        Alumno joselito = new Alumno(19039,"Jose Antonio","Benitez Ruiz");
+        /*Alumno joselito = new Alumno(19039,"Jose Antonio","Benitez Ruiz");
         Alumno albertoMoreno = new Alumno(19040,"Alberto","Moreno Gonzalez","+34 645882127","DAM",2003,false);
         joselito = new Alumno("Jose","SMR");
         //System.out.println(joselito);
@@ -19,6 +19,11 @@ public class JabrProbandoPOO {
         System.out.println("Mis apellidos son " + joselito.getApellidos());
         albertoMoreno.saluda("fuerte");
         albertoMoreno.numeroTelefono();
-        joselito.estudios();
+        joselito.estudios();*/
+
+        Alumno alumno1 = new Alumno("Alumno1","DAM");
+
+        alumno1.saluda();
+        alumno1.estudios();
     }
 }
