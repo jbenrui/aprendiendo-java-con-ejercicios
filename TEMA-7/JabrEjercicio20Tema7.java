@@ -22,13 +22,11 @@ public class JabrEjercicio20Tema7 {
     for (int i = 0; i < numReyes;i++){
       nomRey[i] = System.console().readLine();
     }
-    int contadorRey=0;
     for (int i = 0; i < numReyes  ;i++){
       for (int indice = 0; indice < numReyes;indice++){
         if (nomRey[i].equals(nomRey[indice])){
           if (i == 0){
-            contadorRey= i +1;
-            auxiliar[i]=contadorRey= i +1;
+            auxiliar[i]=i +1;
           }else{
             auxiliar[i]=i;
           }
