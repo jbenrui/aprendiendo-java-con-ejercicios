@@ -27,7 +27,7 @@ public class JabrEjercicio36Tema5 {
     if (voltear == numeroIntroducido){
       System.out.print("El "+numeroIntroducido+ " es capicúa");
     }else{
-    System.out.print("El "+numeroIntroducido+ " no es capicúa");
+      System.out.print("El "+numeroIntroducido+ " no es capicúa");
     }
     
     
