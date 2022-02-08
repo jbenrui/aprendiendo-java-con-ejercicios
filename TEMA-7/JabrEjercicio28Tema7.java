@@ -20,8 +20,6 @@ public class JabrEjercicio28Tema7 {
         // Genera el contenido del array sin que se repita ningún valor
         boolean repetido;
         int i;
-        int j;
-        
         for(fila = 0; fila < 6; fila++) {
         for(columna = 0; columna < 10; columna++) {
             do {
