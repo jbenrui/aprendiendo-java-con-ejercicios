@@ -12,8 +12,8 @@ public class JabrEjercicio16Tema5 {
   public static void main (String[] args) {
     System.out.print("Introduce un número por teclado: ");
     int n = Integer.parseInt(System.console().readLine()) ;
-    for(int divisor = 2; divisor < n  ;divisor++){
-      int divisible = n % divisor;
+    for(int j = 2; j < n  ; j++){
+      int divisible = n % j;
       if (divisible != 0){
         System.out.print("Es primo.");
         break;
