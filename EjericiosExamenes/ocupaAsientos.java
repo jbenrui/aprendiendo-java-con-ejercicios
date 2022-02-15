@@ -8,7 +8,6 @@ public class ocupaAsientos {
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + ", ");
         }
-
     }
     public static int ocupa(int[] fila, int espectadores){
         int espacios = 0;
